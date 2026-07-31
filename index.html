@@ -244,3 +244,39 @@ document.getElementById('rss-news-container').innerHTML = '<p style="text-align:
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* உங்கள் பழைய CSS கோட்கள்... */
+    
+    .card {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" onclick="toggleDetails('news1')">
+    <h3>📰 Tamil Nadu Sports News ➔</h3>
+    <p>கீழே கிளிக் செய்து பார்க்கவும்.</p>
+    
+    <div id="news1" style="display: none; margin-top: 15px;">
+      <img src="poster.jpg" alt="Poster" style="width: 100%; border-radius: 8px;">
+      <p style="margin-top: 10px;">இங்கே உங்கள் செய்திகள் தோன்றும்!</p>
+    </div>
+  </div>
+
+  <script>
+  function toggleDetails(id) {
+    var content = document.getElementById(id);
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+  </script>
+
+</body>
+</html>
