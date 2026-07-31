@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Tamizhan</title>
+<link rel="icon" type="image/png" href="Logo.png">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#111;
+color:#fff;
+}
+
+header{
+background:#0056b3;
+padding:15px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+}
+
+header img{
+height:50px;
+width:50px;
+border-radius:50%;
+object-fit:cover;
+background:#fff;
+padding:2px;
+box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+nav{
+background:#000;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:16px;
+display:inline-block;
+}
+
+.hero{
+background:#002b5b;
+padding:40px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:16px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:20px;
+}
+
+/* Clickable Card Styling */
+.card{
+background:#222;
+padding:20px;
+border-radius:10px;
+border-left:5px solid #00d2ff;
+transition:0.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:scale(1.02);
+background:#2a2a2a;
+}
+
+.card h3{
+color:#00d2ff;
+margin-bottom:10px;
+font-size:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.card p{
+font-size:14px;
+line-height:1.4;
+color:#ccc;
+}
+
+/* Hidden Details Box */
+.details-box{
+display:none;
+margin-top:15px;
+padding-top:15px;
+border-top:1px solid #444;
+animation: fadeIn 0.4s ease-in-out;
+}
+
+.details-box img{
+width:100%;
+border-radius:8px;
+margin-bottom:12px;
+}
+
+.details-box p{
+color:#fff;
+font-size:15px;
+line-height:1.5;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-5px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.rss-section{
+padding:10px;
+margin:10px 0;
+}
+
+.rss-section h2{
+color:#00d2ff;
+margin-bottom:10px;
+text-align:center;
+font-size:22px;
+}
+
+footer{
+background:#000;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="Logo.png" alt="Logo" onerror="this.style.display='none'">
+<span>Football Tamizhan</span>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Tamil Nadu</a>
+<a href="#">India Sports</a>
+<a href="#">International</a>
+<a href="#">Live Scores</a>
+<a href="#">Transfers</a>
+</nav>
+
+<section class="hero">
+<h2>தமிழர்களின் கால்பந்து உலகம்</h2>
+<p>Latest Football News | Live Scores | Transfer Updates</p>
+</section>
+
+<section class="rss-section">
+<h2>🔥 Daily Live Football News</h2>
+<div id="rss-news-container" class="container">
+<p style="text-align:center; width:100%; color:#aaa;">Loading latest news...</p>
+</div>
+</section>
+
+<div class="container">
+
+<div class="card" onclick="toggleDetails('card1')">
+<h3>📰 Tamil Nadu Sports News <span>👇</span></h3>
+<p>கிளிக் செய்து விரிவான செய்தியையும் போஸ்டரையும் பார்க்கவும்.</p>
+
+<div id="card1" class="details-box">
+<p>🔥 <b>தமிழ்நாடு கால்பந்து செய்திகள்:</b> <br><br>
+தமிழ்நாட்டில் நடைபெற்று வரும் லோக்கல் கால்பந்து தொடர்கள், இளம் வீரர்களின் சாதனைகள் மற்றும் பிரத்யேக விளையாட்டு அறிவிப்புகள் இங்கே பதிவேற்றப்படும்.</p>
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails('card2')">
+<h3>🇮🇳 India Sports News <span>👇</span></h3>
+<p>கிளிக் செய்து ISL மற்றும் இந்திய அணிகளின் செய்திகளைப் பார்க்கவும்.</p>
+
+<div id="card2" class="details-box">
+<p>⚽ <b>இந்திய கால்பந்து செய்திகள்:</b> <br><br>
+ISL தொடர்கள், இந்திய தேசிய கால்பந்து அணியின் உலகக்கோப்பை தகுதிச்சுற்று போட்டிகள் மற்றும் முன்னணி இந்திய வீரர்களின் அப்டேட்கள்.</p>
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails('card3')">
+<h3>🌍 International Sports <span>👇</span></h3>
+<p>Premier League, Champions League செய்திகளுக்கு கிளிக் செய்யவும்.</p>
+
+<div id="card3" class="details-box">
+<p>🏆 <b>சர்வதேச கால்பந்து:</b> <br><br>
+இங்கிலீஷ் பிரீமியர் லீக், லாகா லீக், சாம்பியன்ஸ் லீக் போட்டிகளின் முடிவுகள் மற்றும் முக்கிய நிகழ்வுகள்.</p>
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails('card4')">
+<h3>⚽ Transfer News <span>👇</span></h3>
+<p>சமீபத்திய பிளேயர் டிரான்ஸ்பர் தகவல்களுக்கு கிளிக் செய்யவும்.</p>
+
+<div id="card4" class="details-box">
+<p>🔄 <b>டிரான்ஸ்பர் அப்டேட்ஸ்:</b> <br><br>
+பிரபல கால்பந்து வீரர்கள் புதிய கிளப் அணிகளுக்கு மாறுவது தொடர்பான அதிகாரப்பூர்வ அறிவிப்புகள் மற்றும் வதந்திகள்.</p>
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails('card5')">
+<h3>📅 Match Schedule <span>👇</span></h3>
+<p>இன்றைய போட்டிகளின் விவரங்களைப் பார்க்க கிளிக் செய்யவும்.</p>
+
+<div id="card5" class="details-box">
+<p>🗓️ <b>போட்டி அட்டவணை:</b> <br><br>
+இன்று மற்றும் இந்த வாரம் நடைபெறவுள்ள முக்கிய கால்பந்து போட்டிகளின் நேரம் மற்றும் நேரலை ஒளிபரப்பு தகவல்கள்.</p>
+</div>
+</div>
+
+<div class="card" onclick="toggleDetails('card6')">
+<h3>📊 League Table <span>👇</span></h3>
+<p>புள்ளிப்பட்டியல் (Points Table) பார்க்க கிளிக் செய்யவும்.</p>
+
+<div id="card6" class="details-box">
+<p>📈 <b>புள்ளிப்பட்டியல்:</b> <br><br>
+முக்கிய சர்வதேச மற்றும் இந்திய லீக் தொடர்களின் தற்போதைய தரவரிசைப் பட்டியல்.</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 Football Tamizhan | All Rights Reserved
+</footer>
+
+<script>
+// Click to open/close Card Details
+function toggleDetails(id) {
+var content = document.getElementById(id);
+if (content.style.display === "none" || content.style.display === "") {
+content.style.display = "block";
+} else {
+content.style.display = "none";
+}
+}
+
+// Automatic RSS News Fetcher
+const targetRss = encodeURIComponent('https://www.skysports.com/rss/12040');
+const apiUrl = https://api.allorigins.win/get?url=${targetRss}`;
+
+fetch(apiUrl)
+.then(response => response.json())
+.then(data => {
+const parser = new DOMParser();
+const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+const items = xmlDoc.querySelectorAll("item");
+
+const container = document.getElementById('rss-news-container');
+container.innerHTML = '';
+
+if(items.length > 0) {
+let count = 0;
+items.forEach(item => {
+if(count < 6) {
+const title = item.querySelector("title") ? item.querySelector("title").textContent : "";
+const link = item.querySelector("link") ? item.querySelector("link").textContent : "#";
+const description = item.querySelector("description") ? item.querySelector("description").textContent.replace(/<[^>]*>?/gm, '').substring(0, 100) : "";
+
+const card = document.createElement('div');
+card.className = 'card';
+
+card.innerHTML = &lt;h3&gt;⚽${title}</h3>
+<p>{link}" target="_blank" style="color:#00d2ff; text-decoration:none; font-weight:bold; display:inline-block; margin-top:10px;">Read More ➔</a>
+`;
+
+container.appendChild(card);
+count++;
+}
+});
+} else {
+container.innerHTML = '<p style="text-align:center; width:100%;">No news available right now.</p>';
+}
+})
+.catch(error => {
+document.getElementById('rss-news-container').innerHTML = '<p style="text-align:center; width:100%;">Daily news updating soon...</p>';
+});
+</script>
+
+</body>
+</html>
