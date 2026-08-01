@@ -1,0 +1,11 @@
+<div class="news-card" onclick="openNews()">
+<img src="images/news1.jpg" width="100%">
+<h2>Ronaldo Scores Again!</h2>
+<p>Click to read full news...</p>
+</div>
+
+<script>
+function openNews() {
+window.location.href = "news.html";
+}
+</script>
